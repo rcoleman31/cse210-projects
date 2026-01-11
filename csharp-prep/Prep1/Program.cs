@@ -12,7 +12,7 @@ class Program
 
         Console.WriteLine($"Your name is {last_name}, {first_name} {last_name}.");
     }
-}
+} 
 
 //test again
 //https://github.com/rcoleman31/cse210-projects/blob/main/csharp-prep/Prep1/Program.cs
