@@ -8,6 +8,20 @@ class Program
         job1._jobTitle = "Cashier";
         job1._company = "Target";
         job1._startYear = 2020;
-        job1._endYear = 2025;
+        job1._endYear = 2023;
+
+        Job job2 = new Job();
+        job2._jobTitle = "Tutor";
+        job2._company = "BYUI Tutoring Center";
+        job2._startYear = 2023;
+        job2._endYear = 2025;
+
+        Resume myResume = new Resume();
+        myResume._name = "Rachel Coleman";
+
+        myResume._jobs.Add(job1);
+        myResume._jobs.Add(job2);
+
+        myResume.Display();
     }
 }
