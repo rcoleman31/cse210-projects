@@ -1,20 +1,36 @@
 using System;
-using System.Diagnostics;
 
-class Word
+public class Word
 {
-    private string _word;
+    private string _text;
     private bool _hidden;
 
 
-    public Word(string word)
+    public Word(string text)
     {
-        _word = word;
+        _text = text;
         _hidden = false;
     }
 
     public void Hide()
     {
-        
+        _hidden = true;
+    }
+
+    public bool Hidden()
+    {
+        return _hidden;
+    }
+
+    public string GetDisplayText()
+    {
+        if (_hidden)
+        {
+            return new string('_', _text.Length);
+        }
+        else
+        {
+            return _text;
+        }
     }
 }

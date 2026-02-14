@@ -6,5 +6,10 @@ class Program
     {
         Console.WriteLine("Hello Develop03 World!");
         // test
+        Console.ReadLine();
+
+        Console.Clear();
+
+        Console.WriteLine("BBB");
     }
 }
