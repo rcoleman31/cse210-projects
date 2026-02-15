@@ -4,12 +4,32 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
-        // test
-        Console.ReadLine();
+        Reference reference = new Reference("Proverbs", 3, 5, 6);
+        
+        string text = "Trust in the Lord with all thine heart and lean not unto thine own understanding " + "In all thy ways acknowledge him and he shall direct thy paths";
 
-        Console.Clear();
+        Scripture scripture = new Scripture(reference, text);
 
-        Console.WriteLine("BBB");
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine(scripture.GetDisplayText());
+
+            if (scripture.AllWordsHidden())
+            {
+                Console.WriteLine("\nAll words are hidden. Great job!");
+                break;
+            }
+
+            Console.WriteLine("\nPress Enter to continue or type 'quit' to exit:");
+            string input = Console.ReadLine();
+
+            if (input.ToLower() == "quit")
+            {
+                break;
+            }
+
+            scripture.HideRandomWords(3);
+        }
     }
 }
