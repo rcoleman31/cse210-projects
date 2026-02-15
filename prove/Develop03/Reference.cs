@@ -1,5 +1,4 @@
 using System;
-using System.Security.Cryptography;
 
 public class Reference
 {
@@ -11,6 +10,22 @@ public class Reference
 
     public Reference(string book, int chapter, int verse)
     {
-        
+        _book = book;
+        _chapter = chapter;
+        _startVerse = verse;
+        _endVerse = verse;
+        _isRange = false;
+    }
+
+    public string GetDisplayText()
+    {
+        if (_isRange)
+        {
+            return$"{_book} {_chapter}:{_startVerse}-{_endVerse}";
+        }
+        else
+        {
+            return $"{_book} {_chapter}:{_startVerse}";
+        }
     }
 }
