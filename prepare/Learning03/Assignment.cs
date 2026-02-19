@@ -1,21 +1,21 @@
 class Assignment
 {
-    private string _studentName;
+    private string _name;
     private string _topic;
 
-    public Assignment(string studentName, string topic)
+    public Assignment(string name, string topic)
     {
-        _studentName = studentName;
+        _name = name;
         _topic = topic;
     }
 
     public string GetSummary()
     {
-        return $"{_studentName} - {_topic}";
+        return $"{_name} - {_topic}";
     }
 
     public string GetStuddentName()
     {
-        return _studentName;
+        return _name;
     }
 }
