@@ -6,4 +6,9 @@ class Writing : Assignment
     {
         _title = title;
     }
+
+    public string GetWritingInfo()
+    {
+        return $"{_title} by {GetStuddentName()}";
+    }
 }
