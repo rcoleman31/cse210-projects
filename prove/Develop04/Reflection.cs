@@ -2,7 +2,7 @@ using System;
 
 public class Reflection : Activity
 {
-    private List<string> prompts = new List<string>
+    private List<string> _prompts = new List<string>
     {
         "Think of a time when you stood up to someone else.",
         "Think of a time when you did something really difficult.",
@@ -22,8 +22,36 @@ public class Reflection : Activity
         "How can you keep this experience in mind in the future?",
     };
 
+    private List<string> _unusedPrompts;
+
+    private List<string> _unusedQuestions;
+
+    private string GetNextPrompt()
+    {
+        if(_unusedPrompts.Count == 0)
+        {
+            _unusedPrompts = ShuffleList(_prompts);
+        }
+
+        string next = _unusedPrompts[0];
+        _unusedPrompts.RemoveAt(0);
+        return next;
+    }
+
+    private string GetNextQuestion()
+    {
+        if (_unusedQuestions.Count == 0)
+        {
+            _unusedQuestions = ShuffleList(_questions);
+        }
+
+        string next = _unusedQuestions[0];
+        _unusedQuestions.RemoveAt(0);
+        return next;
+    }
+
     public Reflection()
-        : base("Reflection", "")
+        : base("Reflection", "This activity will help you reflect on times inn your life when you have shown strength and resilience. " + "This will help you recognize the power you have and how you can use it in other aspects of your life.")
     {
     }
 
@@ -31,10 +59,16 @@ public class Reflection : Activity
     {
         DisplayStartingMessage();
 
+        _unusedPrompts = ShuffleList(_unusedPrompts);
+        _unusedQuestions = ShuffleList(_questions);
+
         Random rand = new Random();
 
         Console.WriteLine("\nConsider the following prompt:");
-        Console.WriteLine($"---{prompts[rand.Next(prompts.Count)]}---");
+
+        string prompt = GetNextPrompt();
+        Console.WriteLine($"--- {prompt} ---");
+
         Console.WriteLine("\nWhen you have something in mind press enter.");
         Console.ReadLine();
 
@@ -44,7 +78,7 @@ public class Reflection : Activity
 
         while (DateTime.Now < endTime)
         {
-            string question = _questions[rand.Next(_questions.Count)];
+            string question = GetNextQuestion();
             Console.WriteLine($"> {question}");
             ShowSpinner(5);
         }
