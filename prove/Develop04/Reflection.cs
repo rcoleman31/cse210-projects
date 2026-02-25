@@ -13,9 +13,13 @@ public class Reflection : Activity
     private List<string> _questions = new List<string>
     {
         "Why was this experience meaningful to you?",
+        "Have you ever done anything like this before",
+        "How did you get started",
         "How did you feel when it was complete?",
-        "What did you learn about yourself?",
-        "How can you apply this in the future?",
+        "What made this time idfferent than other times when oyu were not as successful?",
+        "What is your favorite thing about this expereince?",
+        "What did you learn about yourself through this experience?",
+        "How can you keep this experience in mind in the future?",
     };
 
     public Reflection()
