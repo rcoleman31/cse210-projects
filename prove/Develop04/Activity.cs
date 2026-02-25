@@ -61,4 +61,20 @@ public class Activity
             Console.Write("\b \b");
         }
     }
+
+    protected List<string> ShuffleList(List<string> original)
+    {
+        List<string> shuffled = new List<string>(original);
+        Random rand = new Random();
+
+        for (int i = 0; i < shuffled.Count; i++)
+        {
+            int j = rand.Next(i, shuffled.Count);
+            string temp = shuffled[i];
+            shuffled[i] = shuffled[j];
+            shuffled[j] = temp;
+        }
+
+        return shuffled;
+    }
 }
