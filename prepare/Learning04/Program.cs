@@ -56,7 +56,7 @@ public class Program
         List<Employee> employees = new List<Employee>();
 
         employees.Add(new SalaryEmployee("Alice", 1200f));
-        employees.Add(new HourlyEmployee("Bob", 10, 40f));
+        employees.Add(new HourlyEmployee("Bob", 10f, 40f));
         employees.Add(new HourlyEmployee("Charlie", 18f, 35f));
 
         foreach (Employee employee in employees)
