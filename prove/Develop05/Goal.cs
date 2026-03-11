@@ -19,4 +19,15 @@ public class Goal
     {
         return _points;
     }
+
+    public virtual string GetDetailsString()
+    {
+        string status = _isComplete ? "[X]" : "[ ]";
+        return $"{status} {_name} ({_description})";
+    }
+
+    public virtual string GetSaveString()
+    {
+        return $"{_name}|{_description}|{_points}|{_isComplete}";
+    }
 }
