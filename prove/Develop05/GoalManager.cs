@@ -29,4 +29,10 @@ public class GoalManager
 
         Console.WriteLine($"You earned {points} points!");
     }
+
+    public void DisplayLevel()
+    {
+        int level = _score / 1000 + 1;
+        Console.WriteLine($"Level: {level}");
+    }
 }

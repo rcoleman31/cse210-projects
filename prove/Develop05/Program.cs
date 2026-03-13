@@ -1,3 +1,5 @@
+// EXCEEDING REQUIREMENTS
+// I added a leveling system to make the progream more like a game. The user gains a new level every 1000 points, giving additional motivation to complete goals.
 using System;
 
 class Program
@@ -12,6 +14,7 @@ class Program
         {
             Console.WriteLine("\nEternal Quest");
             manager.DisplayScore();
+            manager.DisplayLevel();
 
             Console.WriteLine("1. Create Goal");
             Console.WriteLine("2. List Goals");
