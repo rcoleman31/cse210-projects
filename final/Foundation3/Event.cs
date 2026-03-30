@@ -22,7 +22,7 @@ public class Event
         return $"{_title}\n{_description}\n{_date} at {_time}\n{_address.GetFullAddress()}";
     }
 
-    public virtual string GetFullDetials()
+    public virtual string GetFullDetails()
     {
         return GetStandardDetails();
     }
